@@ -29,3 +29,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+     font-family: Montserrat, sans-serif;
+     font-weight: 300;
+     color:#000000;   
+}
+
+/* Heading text styling */
+h1, h2, h3, h4 {
+    font-family: Roboto, sans-serif;
+
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+li {
+    list-style: none ;
+}
