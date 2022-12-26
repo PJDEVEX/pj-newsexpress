@@ -1,0 +1,31 @@
+/* Global Styllings */
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* Color Theme Swatches in Hex */
+.eeQuo-Bright-1-hex { color: #022601; }
+.eeQuo-Bright-2-hex { color: #3D7345; }
+.eeQuo-Bright-3-hex { color: #8FBF93; }
+.eeQuo-Bright-4-hex { color: #FFFFFF; }
+.eeQuo-Bright-5-hex { color: #000000; }
+
+/* Color Theme Swatches in RGBA */
+.eeQuo-Bright-1-rgba { color: rgba(2, 38, 1, 1); }
+.eeQuo-Bright-2-rgba { color: rgba(61, 115, 69, 1); }
+.eeQuo-Bright-3-rgba { color: rgba(143, 191, 147, 1); }
+.eeQuo-Bright-4-rgba { color: rgba(255, 255, 255, 1); }
+.eeQuo-Bright-5-rgba { color: rgba(0, 0, 0, 1); }
+
+/* Color Theme Swatches in HSLA */
+.eeQuo-Bright-1-hsla { color: hsla(118, 94, 7, 1); }
+.eeQuo-Bright-2-hsla { color: hsla(128, 30, 34, 1); }
+.eeQuo-Bright-3-hsla { color: hsla(124, 27, 65, 1); }
+.eeQuo-Bright-4-hsla { color: hsla(0, 0, 100, 1); }
+.eeQuo-Bright-5-hsla { color: hsla(0, 0, 0, 1); }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
