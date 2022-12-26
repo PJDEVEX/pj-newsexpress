@@ -77,13 +77,13 @@ li {
 .branding-cnt {
     background-color:#3D7345;
     border: 1px solid #000000;
-    grid-row: 150px;
+    
 }
 
 .manu-section {
     background-color:#3D7345;
     border: 1px solid #000000;
-    grid-row: 250px;
+    
 
 }
 
@@ -138,13 +138,13 @@ li {
 .news-ctn {
     background-color:#3D7345;
     border: 1px solid #000000;
-    grid-row: 1fr;    
+      
 }
 
 .footer-ctn {
     background-color:#3D7345;
     border: 1px solid #000000;
-    grid-row: 150px;
+    
 }
 
 /* Style for larger screens */
