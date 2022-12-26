@@ -33,7 +33,14 @@
 body {
      font-family: Montserrat, sans-serif;
      font-weight: 300;
-     color:#000000;   
+     color:#000000; 
+     
+     /* Create grit templete the main section */
+     /* Grid for small screens */
+     max-width: 100%;
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 10px
 }
 
 /* Heading text styling */
@@ -65,4 +72,84 @@ h4 {
 
 li {
     list-style: none ;
+}
+
+.branding-cnt {
+    background-color:#3D7345;
+    border: 1px solid #000000;
+    grid-row: 150px;
+}
+
+.manu-section {
+    background-color:#3D7345;
+    border: 1px solid #000000;
+    grid-row: 250px;
+
+}
+
+/* style hamburger menu area */
+.hamburger-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.menu-toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+}
+
+.hamburger {
+    cursor: pointer;
+    position: relative;
+    top: 17%;
+}
+
+/* Style hamburger horizantal bars */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color:#FFFFFF;
+    margin: 5px auto;
+    transition: all 0.5x ease;
+}
+
+/* Stlye for toggle effect */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    transition: 0.3s;
+    background-color: white;
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    transition: 0.3s;
+    background-color: white;
+}
+
+.news-ctn {
+    background-color:#3D7345;
+    border: 1px solid #000000;
+    grid-row: 1fr;    
+}
+
+.footer-ctn {
+    background-color:#3D7345;
+    border: 1px solid #000000;
+    grid-row: 150px;
+}
+
+/* Style for larger screens */
+@media(min-width:1024px) {
+    .menu-toggle{
+        display: none;
+    }
 }
