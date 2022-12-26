@@ -82,6 +82,9 @@ li {
 .hamburger-ctn {
     background-color:#3D7345;
     border: 1px solid #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .menu-section {
@@ -93,14 +96,12 @@ li {
     top: 0;
     left: -300px;
     transition: 0.2s linear;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
+    position: absolute;
 
 }
 
 .menu-section.is-active {
-    left= 0;
+    left: 0;
 }
 
 .nav-item {
@@ -130,6 +131,7 @@ li {
 .hamburger-container {
     width: 100%;
     display: flex;
+
     justify-content: flex-end;
     margin-bottom: 1rem;
 }
@@ -137,9 +139,10 @@ li {
 .menu-toggle {
     width: 45px;
     height: 45px;
-    border-radius: 50%;
+    flex-direction: row;
+    justify-items: end;
+    background-color: black;
     cursor: pointer;
-    display: block;
 }
 
 .hamburger {
