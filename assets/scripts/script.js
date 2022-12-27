@@ -28,6 +28,15 @@ console.log(newsType)
 console.log(newsDetails)
 
 // Defining apis 
+let apiKey =  "6fe6bff8ebbd40489acf75967f7dab05";
+let headlinesNews =  "https://newsapi.org/v2/top-headlines?country=se&category=general&apikey=";
+let businessNews =  "https://newsapi.org/v2/top-headlines?country=se&category=business&apikey=";
+let sportsNews =  "https://newsapi.org/v2/top-headlines?country=se&category=sports&apikey=";
+let entertaintmentNews =  "https://newsapi.org/v2/top-headlines?country=se&category=technology&apikey=";
+let technologyNews =  "https://newsapi.org/v2/top-headlines?country=se&category=entertainment&apikey=";
+let searchNews =  "https://newsapi.org/v2/everything?q=";
+
+
 
 
 /**
