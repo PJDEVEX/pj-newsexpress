@@ -9,6 +9,10 @@ let sportsBtn = document.querySelector("#sports");
 let technologyBtn = document.querySelector("#technology");
 let entertainmentBtn = document.querySelector("#entertainment");
 let searchBtn = document.querySelector("#search-btn");
+// Access to search and news type and details
+let newsQuery = document.querySelector("#news-query");
+let newsType = document.querySelector("#news-type");
+let newsDetails = document.querySelector("#news-details");
 
 // Confirm message to the web console for accurate access  
 console.log(menuToggle)
@@ -24,7 +28,6 @@ console.log(newsType)
 console.log(newsDetails)
 
 // Defining apis 
-
 
 
 /**
