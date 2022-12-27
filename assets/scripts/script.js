@@ -31,7 +31,7 @@ console.log(newsDetails)
 let newsDataArr = [];
 
 // Defining apis 
-let apiKey = "6fe6bff8ebbd40489acf75967f7dab05";
+let api_Key = "6fe6bff8ebbd40489acf75967f7dab05";
 let generalNews = "https://newsapi.org/v2/top-headlines?country=se&category=general&apikey=";
 let businessNews = "https://newsapi.org/v2/top-headlines?country=se&category=business&apikey=";
 let sportsNews = "https://newsapi.org/v2/top-headlines?country=se&category=sports&apikey=";
@@ -46,6 +46,7 @@ let searchNews = "https://newsapi.org/v2/everything?q=";
  * Create event listners to activate
  * menu toggle bars and navigation section
  */
+
 menuToggle.addEventListener("click", () => {
     // event listener for toggle menu bars
     menuToggle.classList.toggle("is-active");
@@ -117,7 +118,7 @@ searchBtn.addEventListener("click", () => {
  * Defining the fetch general news function
  */
 let fetchGeneralNews = async () => {
-    let response = await fetch(generalNews+apiKey);
+    let response = await fetch(generalNews + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -136,7 +137,7 @@ let fetchGeneralNews = async () => {
  * Defining the fetch business news function
  */
 let fetchBusinessNews = async () => {
-    let response = await fetch(businessNews+apiKey);
+    let response = await fetch(businessNews + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -155,7 +156,7 @@ let fetchBusinessNews = async () => {
  * Defining the fetch sports news function
  */
 let fetchSportsNews = async () => {
-    let response = await fetch(sportsNews+apiKey);
+    let response = await fetch(sportsNews + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -174,7 +175,7 @@ let fetchSportsNews = async () => {
  * Defining the fetch entertaintment news function
  */
 let fetchEntertaintmentNews = async () => {
-    let response = await fetch(entertaintmentNews+apiKey);
+    let response = await fetch(entertaintmentNews + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -193,7 +194,7 @@ let fetchEntertaintmentNews = async () => {
  * Defining the fetch technology news function
  */
 let fetchTechnologyNews = async () => {
-    let response = await fetch(technologyNews+apiKey);
+    let response = await fetch(technologyNews + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -212,7 +213,12 @@ let fetchTechnologyNews = async () => {
  * Defining the fetch search news function
  */
 let fetchSearchNews = async () => {
-    let response = await fetch(searchNews + apiKey);
+
+    // return if search news value is null
+    if (searchNews.value == null)
+        return;
+
+    let response = await fetch(searchNews + encodeURIComponent(searchNews.value) + "&apiKey=" + api_Key);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -225,4 +231,62 @@ let fetchSearchNews = async () => {
     }
 
     displayNews();
+}
+
+/**
+ * For dynamically adding news components to dom
+ */
+function displayNews() {
+
+    news = details.innerHTML = "";
+
+    newsDataArr.forEach(news => {
+
+        let date = news.publishedAt.split("T");
+
+        let col = document.createElement('div');
+        col.className = "news-col";
+
+        let card = document.createElement('div');
+        card.className = "news-card"
+
+        let image = document.createElement('img');
+        image.setAttribute("height", "matchparent");
+        image.setAttribute("width", "100%");
+        image.src = news.urlToImage;
+
+        let cardbody = document.createElement('div');
+        cardbody.className = "card-body";
+
+        let newsHeading = document.createElement('h2');
+        newsHeading.className = "card-title";
+        newsHeading.innerHTML = news.title;
+
+        let dateHeading = document.createElement('h3');
+        dateHeading.className = "text-primary";
+        dateHeading.innerHTML = date[0];
+
+        let discription = document.createElement('p');
+        discription.className = "text-para";
+        discription.innerHTML = news.description;
+
+        let link = document.createElement('a');
+        link.className = "read-more-btn";
+        link.setAttribute("target", "_blank");
+        link.href = news.url;
+        link.innerHTML = "Read more";
+
+        cardBody.appendChild(newsHeading);
+        cardBody.appendChild(dateHeading);
+        cardBody.appendChild(discription);
+        cardBody.appendChild(link);
+
+        card.appendChild(image);
+        card.appendChild(cardBody);
+
+        col.appendChild(card);
+
+        newsdetails.appendChild(col);
+    });
+
 }
