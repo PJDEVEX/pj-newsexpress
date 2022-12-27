@@ -27,14 +27,17 @@ console.log(newsQuery)
 console.log(newsType)
 console.log(newsDetails)
 
+// Array for fetched news
+let newsDataArr = [];
+
 // Defining apis 
-let apiKey =  "6fe6bff8ebbd40489acf75967f7dab05";
-let headlinesNews =  "https://newsapi.org/v2/top-headlines?country=se&category=general&apikey=";
-let businessNews =  "https://newsapi.org/v2/top-headlines?country=se&category=business&apikey=";
-let sportsNews =  "https://newsapi.org/v2/top-headlines?country=se&category=sports&apikey=";
-let entertaintmentNews =  "https://newsapi.org/v2/top-headlines?country=se&category=technology&apikey=";
-let technologyNews =  "https://newsapi.org/v2/top-headlines?country=se&category=entertainment&apikey=";
-let searchNews =  "https://newsapi.org/v2/everything?q=";
+let apiKey = "6fe6bff8ebbd40489acf75967f7dab05";
+let generalNews = "https://newsapi.org/v2/top-headlines?country=se&category=general&apikey=";
+let businessNews = "https://newsapi.org/v2/top-headlines?country=se&category=business&apikey=";
+let sportsNews = "https://newsapi.org/v2/top-headlines?country=se&category=sports&apikey=";
+let entertaintmentNews = "https://newsapi.org/v2/top-headlines?country=se&category=technology&apikey=";
+let technologyNews = "https://newsapi.org/v2/top-headlines?country=se&category=entertainment&apikey=";
+let searchNews = "https://newsapi.org/v2/everything?q=";
 
 
 
@@ -47,13 +50,16 @@ menuToggle.addEventListener("click", () => {
     // event listener for toggle menu bars
     menuToggle.classList.toggle("is-active");
     // event listener for navigation section
-    menuSection.classList.toggle("is-active"); 
+    menuSection.classList.toggle("is-active");
 })
 
 /**
  * Event listener for click on general button to get called
  */
 generalBtn.addEventListener("click", () => {
+
+    // Fetching general news
+    fetchGeneralNews();
 
 });
 
@@ -62,6 +68,9 @@ generalBtn.addEventListener("click", () => {
  */
 businessBtn.addEventListener("click", () => {
 
+    //  Fetching business news
+    fetchBusinessNews();
+
 });
 
 /**
@@ -69,12 +78,17 @@ businessBtn.addEventListener("click", () => {
  */
 sportsBtn.addEventListener("click", () => {
 
+    //  Fetching sports news
+    fetchSportsNews();
+
 });
 
-/**
- * Event listener for click on technology button to get called
- */
+
+// Event listener for click on technology button to get called
 technologyBtn.addEventListener("click", () => {
+
+    // Fetching entertaintment news
+    fetchEntertaintmentNews();
 
 });
 
@@ -83,6 +97,9 @@ technologyBtn.addEventListener("click", () => {
  */
 entertainmentBtn.addEventListener("click", () => {
 
+    // Fetching technology news
+    fetchTechnologyNews();
+
 });
 
 /**
@@ -90,4 +107,122 @@ entertainmentBtn.addEventListener("click", () => {
  */
 searchBtn.addEventListener("click", () => {
 
+
+    // Fetching search news
+    fetchSearchNews();
+
 });
+
+/**
+ * Defining the fetch general news function
+ */
+let fetchGeneralNews = async () => {
+    let response = await fetch(generalNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
+
+/**
+ * Defining the fetch business news function
+ */
+let fetchBusinessNews = async () => {
+    let response = await fetch(businessNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
+
+/**
+ * Defining the fetch sports news function
+ */
+let fetchSportsNews = async () => {
+    let response = await fetch(sportsNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
+
+/**
+ * Defining the fetch entertaintment news function
+ */
+let fetchEntertaintmentNews = async () => {
+    let response = await fetch(entertaintmentNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
+
+/**
+ * Defining the fetch technology news function
+ */
+let fetchTechnologyNews = async () => {
+    let response = await fetch(technologyNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
+
+/**
+ * Defining the fetch search news function
+ */
+let fetchSearchNews = async () => {
+    let response = await fetch(searchNews + apiKey);
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+        let myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        // handle errors
+        console.log(response.status, response.statusText);
+        newsDetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    displayNews();
+}
