@@ -255,8 +255,8 @@ function displayNews() {
         image.setAttribute("width", "100%");
         image.src = news.urlToImage;
 
-        let cardbody = document.createElement('div');
-        cardbody.className = "card-body";
+        let cardBody = document.createElement('div');
+        cardBody.className = "card-body";
 
         let newsHeading = document.createElement('h2');
         newsHeading.className = "card-title";
@@ -286,7 +286,7 @@ function displayNews() {
 
         col.appendChild(card);
 
-        newsdetails.appendChild(col);
+        newsDetails.appendChild(col);
     });
 
 }
