@@ -117,7 +117,7 @@ searchBtn.addEventListener("click", () => {
  * Defining the fetch general news function
  */
 let fetchGeneralNews = async () => {
-    let response = await fetch(generalNews + apiKey);
+    let response = await fetch(generalNews+apiKey);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -136,7 +136,7 @@ let fetchGeneralNews = async () => {
  * Defining the fetch business news function
  */
 let fetchBusinessNews = async () => {
-    let response = await fetch(businessNews + apiKey);
+    let response = await fetch(businessNews+apiKey);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -155,7 +155,7 @@ let fetchBusinessNews = async () => {
  * Defining the fetch sports news function
  */
 let fetchSportsNews = async () => {
-    let response = await fetch(sportsNews + apiKey);
+    let response = await fetch(sportsNews+apiKey);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -174,7 +174,7 @@ let fetchSportsNews = async () => {
  * Defining the fetch entertaintment news function
  */
 let fetchEntertaintmentNews = async () => {
-    let response = await fetch(entertaintmentNews + apiKey);
+    let response = await fetch(entertaintmentNews+apiKey);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
@@ -193,7 +193,7 @@ let fetchEntertaintmentNews = async () => {
  * Defining the fetch technology news function
  */
 let fetchTechnologyNews = async () => {
-    let response = await fetch(technologyNews + apiKey);
+    let response = await fetch(technologyNews+apiKey);
     newsDataArr = [];
     if (response.status >= 200 && response.status < 300) {
         let myJson = await response.json();
